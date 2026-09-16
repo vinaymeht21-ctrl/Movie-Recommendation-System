@@ -1,1 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CineMatch — Movie Recommender</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="bg-overlay"></div>
 
+  <header>
+    <h1>🎬 CineMatch</h1>
+    <p>Find movies you'll love — powered by content-based filtering</p>
+  </header>
+
+  <main>
+    <div class="search-box">
+      <input
+        type="text"
+        id="movieInput"
+        placeholder="Type a movie name (e.g., Avatar, Batman Begins...)"
+        autocomplete="off"
+      />
+      <ul id="suggestions" class="suggestions"></ul>
+      <button id="recommendBtn">Recommend 🍿</button>
+    </div>
+
+    <div id="loader" class="loader hidden">
+      <div class="spinner"></div>
+      <p>Finding similar movies…</p>
+    </div>
+
+    <section id="results" class="results"></section>
+  </main>
+
+  <footer>
+    <p>Built with ❤️ using Flask + Scikit-learn · TMDb data</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
